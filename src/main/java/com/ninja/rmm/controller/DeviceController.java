@@ -23,7 +23,7 @@ public class DeviceController {
     private DeviceRepository deviceRepository;
 
     /**
-     * lis all devices assigned to a customer via GET http://localhost:8080/customers/{customerId}/devices}
+     * lis all devices assigned to a customer via GET http://localhost:8080/customers/{customerId}/devices
      *
      * @param customerId represents the id of the customer
      * @return Lis of Device objects
@@ -34,7 +34,7 @@ public class DeviceController {
     }
 
     /**
-     * Create a device and assign to a customer via POST http://localhost:8080/customers/{customerId}/devices}
+     * Create a device and assign to a customer via POST http://localhost:8080/customers/{customerId}/devices
      *
      * @param customerId represents the id of the customer
      * @param device     Device object been passed via request body
@@ -68,6 +68,7 @@ public class DeviceController {
         return deviceRepository.findById(deviceId).map(device -> {
             device.setSystemName(deviceRequest.getSystemName());
             device.setDeviceType(deviceRequest.getDeviceType());
+            device.setDeviceCost(deviceRequest.getDeviceCost());
             return deviceRepository.save(device);
         }).orElseThrow(() -> new DeviceNotFoundException(deviceId));
     }

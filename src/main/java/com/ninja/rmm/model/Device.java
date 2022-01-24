@@ -9,6 +9,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.lang.annotation.Repeatable;
 
 @Entity
 @Table(name = "devices")
@@ -18,8 +19,10 @@ public class Device {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
     private String systemName;
     private String deviceType;
+    private double deviceCost;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
@@ -33,9 +36,10 @@ public class Device {
 
     }
 
-    public Device(String systemName, String deviceType) {
+    public Device(String systemName, String deviceType, double deviceCost) {
         this.systemName = systemName;
         this.deviceType = deviceType;
+        this.deviceCost = deviceCost;
     }
 
     public Long getId() {
@@ -60,6 +64,14 @@ public class Device {
 
     public void setDeviceType(String deviceType) {
         this.deviceType = deviceType;
+    }
+
+    public double getDeviceCost() {
+        return deviceCost;
+    }
+
+    public void setDeviceCost(double deviceCost) {
+        this.deviceCost = deviceCost;
     }
 
     public Customer getCustomer() {

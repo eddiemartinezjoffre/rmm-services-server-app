@@ -44,9 +44,9 @@ public class LoadDatabase {
              * Preload Device data
              */
 
-            deviceRepository.save(new Device("WS-0001", "Windows Workstation"));
-            deviceRepository.save(new Device("SRV-001", "Windows Server"));
-            deviceRepository.save(new Device("MAC-001", "Mac"));
+            deviceRepository.save(new Device("WS-0001", "Windows Workstation", 4));
+            deviceRepository.save(new Device("SRV-001", "Windows Server", 4));
+            deviceRepository.save(new Device("MAC-001", "Mac", 4));
 
             deviceRepository.findAll().forEach(device -> {
                 log.info("Preloaded " + device);
