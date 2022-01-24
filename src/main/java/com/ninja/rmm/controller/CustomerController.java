@@ -6,6 +6,7 @@ import com.ninja.rmm.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 import java.util.List;
 
@@ -16,27 +17,30 @@ public class CustomerController {
     private CustomerRepository customerRepository;
 
     /**
-     * Get all customers via http://localhost:8080/customers
+     * Get all customers via GET http://localhost:8080/customers
+     *
      * @return a List of Customer objects
      */
     @GetMapping("/customers")
-    public List<Customer> getAllCustomers(){
+    public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
 
     /**
-     * Get a single customer via http://localhost:8080/customers/{id}
-     * @param customerId
+     * Get a single customer via GET http://localhost:8080/customers/{id}
+     *
+     * @param customerId represents the id of the customer
      * @return Customer object
      */
     @GetMapping("/customers/{customerId}")
-    public Customer getCustomer(@PathVariable Long customerId){
+    public Customer getCustomer(@PathVariable Long customerId) {
         return customerRepository.findById(customerId).orElseThrow(() -> new CustomerNotFoundException(customerId));
     }
 
     /**
-     * Create a customer via http://localhost:8080/customers
-     * @param customer
+     * Create a customer via POST http://localhost:8080/customers
+     *
+     * @param customer represents a Customer object passed in the body of the request
      * @return Customer object
      */
 
@@ -46,9 +50,10 @@ public class CustomerController {
     }
 
     /**
-     * Edit an existing customer via http://localhost:8080/customers/{id}
-     * @param customerId
-     * @param customerRequest
+     * Edit an existing customer PUT via http://localhost:8080/customers/{id}
+     *
+     * @param customerId      represents the id of the customer
+     * @param customerRequest represents the request sent out on the body
      * @return Customer object
      */
     @PutMapping("/customers/{customerId}")
@@ -60,9 +65,10 @@ public class CustomerController {
     }
 
     /**
-     * Delete an existing customer via http://localhost:8080/customers/{id}
-     * @param customerId
-     * @return ResponseEntity
+     * Delete an existing customer via DELETE http://localhost:8080/customers/{id}
+     *
+     * @param customerId represents the id of the customer
+     * @return ResponseEntity object
      */
     @DeleteMapping("/customers/{customerId}")
     public ResponseEntity<?> deleteCustomer(@PathVariable Long customerId) {
