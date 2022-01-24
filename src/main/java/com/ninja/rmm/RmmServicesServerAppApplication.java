@@ -1,4 +1,4 @@
-package com.ninja.rmmservicesserverapp;
+package com.ninja.rmm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
