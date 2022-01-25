@@ -7,6 +7,7 @@ import com.ninja.rmm.model.Service;
 import com.ninja.rmm.repository.CustomerRepository;
 import com.ninja.rmm.repository.ServiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +30,7 @@ public class ServiceController {
      * @return Lis of Service objects
      */
     @GetMapping("/customers/{customerId}/services")
+    @ResponseStatus(value = HttpStatus.OK)
     public List<Service> getAllServicesByCustomerId(@PathVariable(value = "customerId") Long customerId) {
         return serviceRepository.findByCustomerId(customerId);
     }
@@ -41,6 +43,7 @@ public class ServiceController {
      * @return Service object
      */
     @PostMapping("/customers/{customerId}/services")
+    @ResponseStatus(value = HttpStatus.CREATED)
     public Service createService(@PathVariable(value = "customerId") Long customerId,
                                  @Valid @RequestBody Service service) {
         return customerRepository.findById(customerId).map(customer -> {
@@ -58,6 +61,7 @@ public class ServiceController {
      * @return Service object
      */
     @PutMapping("/customers/{customerId}/services/{serviceId}")
+    @ResponseStatus(value = HttpStatus.OK)
     public Service updateService(@PathVariable(value = "customerId") Long customerId,
                                  @PathVariable(value = "serviceId") Long serviceId,
                                  @Valid @RequestBody Service serviceRequest) {
@@ -81,6 +85,7 @@ public class ServiceController {
      * @return ResponseEntity
      */
     @DeleteMapping("/customers/{customerId}/services/{serviceId}")
+    @ResponseStatus(value = HttpStatus.OK)
     public ResponseEntity<?> deleteService(@PathVariable(value = "customerId") Long customerId,
                                            @PathVariable(value = "serviceId") Long serviceId) {
         return serviceRepository.findByIdAndCustomerId(serviceId, customerId).map(service -> {

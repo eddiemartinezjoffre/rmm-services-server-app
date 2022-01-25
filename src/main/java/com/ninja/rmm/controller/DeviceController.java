@@ -7,6 +7,7 @@ import com.ninja.rmm.model.Device;
 import com.ninja.rmm.repository.CustomerRepository;
 import com.ninja.rmm.repository.DeviceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +30,7 @@ public class DeviceController {
      * @return Lis of Device objects
      */
     @GetMapping("/customers/{customerId}/devices")
+    @ResponseStatus(value = HttpStatus.OK)
     public List<Device> getAllDevicesByCustomerId(@PathVariable(value = "customerId") Long customerId) {
         return deviceRepository.findByCustomerId(customerId);
     }
@@ -41,6 +43,7 @@ public class DeviceController {
      * @return Device object
      */
     @PostMapping("/customers/{customerId}/devices")
+    @ResponseStatus(value = HttpStatus.CREATED)
     public Device createDevice(@PathVariable(value = "customerId") Long customerId,
                                @Valid @RequestBody Device device) {
         return customerRepository.findById(customerId).map(customer -> {
@@ -58,6 +61,7 @@ public class DeviceController {
      * @return Device object
      */
     @PutMapping("/customers/{customerId}/devices/{deviceId}")
+    @ResponseStatus(value = HttpStatus.OK)
     public Device updateDevice(@PathVariable(value = "customerId") Long customerId,
                                @PathVariable(value = "deviceId") Long deviceId,
                                @Valid @RequestBody Device deviceRequest) {
@@ -81,6 +85,7 @@ public class DeviceController {
      * @return ResponseEntity
      */
     @DeleteMapping("/customers/{customerId}/devices/{deviceId}")
+    @ResponseStatus(value = HttpStatus.OK)
     public ResponseEntity<?> deleteDevice(@PathVariable(value = "customerId") Long customerId,
                                           @PathVariable(value = "deviceId") Long deviceId) {
         return deviceRepository.findByIdAndCustomerId(deviceId, customerId).map(device -> {
