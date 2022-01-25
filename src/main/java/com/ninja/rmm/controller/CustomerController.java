@@ -4,6 +4,7 @@ import com.ninja.rmm.exception.CustomerNotFoundException;
 import com.ninja.rmm.model.Customer;
 import com.ninja.rmm.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +23,7 @@ public class CustomerController {
      * @return a List of Customer objects
      */
     @GetMapping("/customers")
+    @ResponseStatus(value = HttpStatus.OK)
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
@@ -33,6 +35,7 @@ public class CustomerController {
      * @return Customer object
      */
     @GetMapping("/customers/{customerId}")
+    @ResponseStatus(value = HttpStatus.OK)
     public Customer getCustomer(@PathVariable Long customerId) {
         return customerRepository.findById(customerId).orElseThrow(() -> new CustomerNotFoundException(customerId));
     }
@@ -45,6 +48,7 @@ public class CustomerController {
      */
 
     @PostMapping("/customers")
+    @ResponseStatus(value = HttpStatus.CREATED)
     public Customer createCustomer(@Valid @RequestBody Customer customer) {
         return customerRepository.save(customer);
     }
@@ -57,6 +61,7 @@ public class CustomerController {
      * @return Customer object
      */
     @PutMapping("/customers/{customerId}")
+    @ResponseStatus(value = HttpStatus.OK)
     public Customer updateCustomer(@PathVariable Long customerId, @Valid @RequestBody Customer customerRequest) {
         return customerRepository.findById(customerId).map(customer -> {
             customer.setName(customerRequest.getName());
@@ -71,6 +76,7 @@ public class CustomerController {
      * @return ResponseEntity object
      */
     @DeleteMapping("/customers/{customerId}")
+    @ResponseStatus(value = HttpStatus.OK)
     public ResponseEntity<?> deleteCustomer(@PathVariable Long customerId) {
         return customerRepository.findById(customerId).map(customer -> {
             customerRepository.delete(customer);
