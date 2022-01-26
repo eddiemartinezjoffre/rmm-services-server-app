@@ -42,12 +42,6 @@ public class Device {
 
     }
 
-    public Device(String systemName, String deviceType, double deviceCost) {
-        this.systemName = systemName;
-        this.deviceType = deviceType;
-        this.deviceCost = deviceCost;
-    }
-
     public Device(String systemName, String deviceType, double deviceCost, long customerId) {
         this.systemName = systemName;
         this.deviceType = deviceType;
