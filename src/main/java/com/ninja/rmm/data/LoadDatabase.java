@@ -31,11 +31,16 @@ public class LoadDatabase {
              * Preload Service data
              */
 
-            serviceRepository.save(new Service("Antivirus-Mac", "To have antivirus in their devices.", 7));
-            serviceRepository.save(new Service("Antivirus-Win", "To have antivirus in their devices.", 5));
-            serviceRepository.save(new Service("Cloudberry", "To backup data in their devices.", 3));
-            serviceRepository.save(new Service("PSA", "Ticketing system for alerts in their devices.", 2));
-            serviceRepository.save(new Service("TeamViewer", "Remote connection to devices.", 1));
+            serviceRepository.save(new Service("Antivirus-Mac", "To have antivirus in their devices.", 7, 1));
+            serviceRepository.save(new Service("Antivirus-Win", "To have antivirus in their devices.", 5, 1));
+            serviceRepository.save(new Service("Cloudberry", "To backup data in their devices.", 3, 1));
+            serviceRepository.save(new Service("PSA", "Ticketing system for alerts in their devices.", 2, 1));
+            serviceRepository.save(new Service("TeamViewer", "Remote connection to devices.", 1, 1));
+            serviceRepository.save(new Service("Antivirus-Mac", "To have antivirus in their devices.", 7, 2));
+            serviceRepository.save(new Service("Antivirus-Win", "To have antivirus in their devices.", 5, 2));
+            serviceRepository.save(new Service("Cloudberry", "To backup data in their devices.", 3, 2));
+            serviceRepository.save(new Service("PSA", "Ticketing system for alerts in their devices.", 2, 2));
+            serviceRepository.save(new Service("TeamViewer", "Remote connection to devices.", 1, 2));
             serviceRepository.findAll().forEach(service -> {
                 log.info("Preloaded " + service);
             });
@@ -44,9 +49,12 @@ public class LoadDatabase {
              * Preload Device data
              */
 
-            deviceRepository.save(new Device("WS-0001", "Windows Workstation", 4));
-            deviceRepository.save(new Device("SRV-001", "Windows Server", 4));
-            deviceRepository.save(new Device("MAC-001", "Mac", 4));
+            deviceRepository.save(new Device("WS-0001", "Windows Workstation", 4, 1));
+            deviceRepository.save(new Device("SRV-001", "Windows Server", 4, 1));
+            deviceRepository.save(new Device("MAC-001", "Mac", 4, 1));
+            deviceRepository.save(new Device("WS-0002", "Windows Workstation", 4, 2));
+            deviceRepository.save(new Device("SRV-002", "Windows Server", 4, 2));
+            deviceRepository.save(new Device("MAC-002", "Mac", 4, 2));
 
             deviceRepository.findAll().forEach(device -> {
                 log.info("Preloaded " + device);

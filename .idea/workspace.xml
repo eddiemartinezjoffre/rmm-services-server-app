@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="618e891f-8e9f-40cc-b985-f6550e2915d8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Cost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Cost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Device.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/controller/CostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/controller/CostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/controller/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/controller/DeviceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/controller/ServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/controller/ServiceController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,10 +96,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/rmm-services-server-app-master-lodem/rmm-services-server-app-master" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/rmm-services/rmm-services-server-app-master" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
@@ -118,7 +115,7 @@
       <recent name="com.ninja.rmm.data" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DeviceControllerTest.getAllDevices">
+  <component name="RunManager" selected="Spring Boot.RmmServicesServerAppApplication">
     <configuration name="RmmServicesServerAppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ninja.rmm.RmmServicesServerAppApplication" />
       <module name="rmm-services-server-app.main" />
@@ -164,6 +161,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CustomerControllerTest.getAllCustomers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rmm-services-server-app.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ninja.rmm.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ninja.rmm.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.ninja.rmm.controller.CustomerControllerTest" />
+      <option name="METHOD_NAME" value="getAllCustomers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DeviceControllerTest.getAllDevices" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rmm-services-server-app.test" />
       <extension name="coverage">
@@ -175,22 +188,6 @@
       <option name="PACKAGE_NAME" value="com.ninja.rmm.controller" />
       <option name="MAIN_CLASS_NAME" value="com.ninja.rmm.controller.DeviceControllerTest" />
       <option name="METHOD_NAME" value="getAllDevices" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ServiceControllerTest.deleteDevice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rmm-services-server-app.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ninja.rmm.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ninja.rmm.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.ninja.rmm.controller.ServiceControllerTest" />
-      <option name="METHOD_NAME" value="deleteDevice" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -216,11 +213,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CustomerControllerTest.getAllCustomers" />
         <item itemvalue="JUnit.DeviceControllerTest.getAllDevices" />
         <item itemvalue="Application.RmmServicesServerAppApplication" />
         <item itemvalue="JUnit.CustomerControllerTest.createCustomer" />
         <item itemvalue="JUnit.CostControllerTest.getCosts" />
-        <item itemvalue="JUnit.ServiceControllerTest.deleteDevice" />
       </list>
     </recent_temporary>
   </component>
@@ -232,8 +229,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1642881217787</updated>
+      <workItem from="1643205426578" duration="2388000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

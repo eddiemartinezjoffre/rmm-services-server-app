@@ -1,21 +1,36 @@
 package com.ninja.rmm.controller;
 
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+
 import com.ninja.rmm.exception.CustomerNotFoundException;
 import com.ninja.rmm.exception.DeviceNotFoundException;
 import com.ninja.rmm.model.Device;
+import com.ninja.rmm.model.DeviceModelAssembler;
 import com.ninja.rmm.repository.CustomerRepository;
 import com.ninja.rmm.repository.DeviceRepository;
+import java.util.List;
+import java.util.stream.Collectors;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
-import java.util.List;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DeviceController {
+
+    private final DeviceModelAssembler deviceModelAssembler;
 
     @Autowired
     private CustomerRepository customerRepository;
@@ -23,16 +38,23 @@ public class DeviceController {
     @Autowired
     private DeviceRepository deviceRepository;
 
+    public DeviceController(DeviceModelAssembler deviceModelAssembler) {
+        this.deviceModelAssembler = deviceModelAssembler;
+    }
+
     /**
-     * lis all devices assigned to a customer via GET http://localhost:8080/customers/{customerId}/devices
+     * list all devices assigned to a customer via GET http://localhost:8080/customers/{customerId}/devices
      *
      * @param customerId represents the id of the customer
      * @return Lis of Device objects
      */
     @GetMapping("/customers/{customerId}/devices")
     @ResponseStatus(value = HttpStatus.OK)
-    public List<Device> getAllDevicesByCustomerId(@PathVariable(value = "customerId") Long customerId) {
-        return deviceRepository.findByCustomerId(customerId);
+    public CollectionModel<EntityModel<Device>> getAllDevicesByCustomerId(@PathVariable(value = "customerId") Long customerId) {
+        List<EntityModel<Device>> devices = deviceRepository.findByCustomerId(customerId).stream().map(deviceModelAssembler::toModel)
+            .collect(Collectors.toList());
+
+        return CollectionModel.of(devices, linkTo(methodOn(DeviceController.class).getAllDevicesByCustomerId(customerId)).withSelfRel());
     }
 
     /**

@@ -1,43 +1,68 @@
 package com.ninja.rmm.controller;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
+
 import com.ninja.rmm.exception.CustomerNotFoundException;
 import com.ninja.rmm.model.Customer;
+import com.ninja.rmm.model.CustomerModelAssembler;
 import com.ninja.rmm.repository.CustomerRepository;
+import java.util.List;
+import java.util.stream.Collectors;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
-import java.util.List;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CustomerController {
 
+    private final CustomerModelAssembler customerAssembler;
+
     @Autowired
     private CustomerRepository customerRepository;
+
+    public CustomerController(CustomerModelAssembler customerAssembler) {
+        this.customerAssembler = customerAssembler;
+    }
 
     /**
      * Get all customers via GET http://localhost:8080/customers
      *
-     * @return a List of Customer objects
+     * @return a List of Customer domain object with links
      */
     @GetMapping("/customers")
     @ResponseStatus(value = HttpStatus.OK)
-    public List<Customer> getAllCustomers() {
-        return customerRepository.findAll();
+    public CollectionModel<EntityModel<Customer>> getAllCustomers() {
+        List<EntityModel<Customer>> customers = customerRepository.findAll().stream()
+            .map(customerAssembler::toModel)
+            .collect(Collectors.toList());
+
+        return CollectionModel.of(customers, linkTo(methodOn(CustomerController.class).getAllCustomers()).withSelfRel());
     }
 
     /**
      * Get a single customer via GET http://localhost:8080/customers/{id}
      *
      * @param customerId represents the id of the customer
-     * @return Customer object
+     * @return Customer domain object with links
      */
     @GetMapping("/customers/{customerId}")
     @ResponseStatus(value = HttpStatus.OK)
-    public Customer getCustomer(@PathVariable Long customerId) {
-        return customerRepository.findById(customerId).orElseThrow(() -> new CustomerNotFoundException(customerId));
+    public EntityModel<Customer> getCustomer(@PathVariable Long customerId) {
+
+        Customer customer = customerRepository.findById(customerId)
+            .orElseThrow(() -> new CustomerNotFoundException(customerId));
+        return customerAssembler.toModel(customer);
     }
 
     /**

@@ -1,21 +1,35 @@
 package com.ninja.rmm.controller;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+
 import com.ninja.rmm.exception.CustomerNotFoundException;
-import com.ninja.rmm.exception.SameNameServiceException;
 import com.ninja.rmm.exception.ServiceNotFoundException;
 import com.ninja.rmm.model.Service;
+import com.ninja.rmm.model.ServiceModelAssembler;
 import com.ninja.rmm.repository.CustomerRepository;
 import com.ninja.rmm.repository.ServiceRepository;
+import java.util.List;
+import java.util.stream.Collectors;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
-import java.util.List;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ServiceController {
+
+    private final ServiceModelAssembler serviceModelAssembler;
 
     @Autowired
     private CustomerRepository customerRepository;
@@ -23,16 +37,23 @@ public class ServiceController {
     @Autowired
     private ServiceRepository serviceRepository;
 
+    public ServiceController(ServiceModelAssembler serviceModelAssembler) {
+        this.serviceModelAssembler = serviceModelAssembler;
+    }
+
     /**
-     * lis all services assigned to a customer via GET http://localhost:8080/customers/{customerId}/services
+     * list all services assigned to a customer via GET http://localhost:8080/customers/{customerId}/services
      *
      * @param customerId represents the id of the customer
-     * @return Lis of Service objects
+     * @return List of Service domain object with links
      */
     @GetMapping("/customers/{customerId}/services")
     @ResponseStatus(value = HttpStatus.OK)
-    public List<Service> getAllServicesByCustomerId(@PathVariable(value = "customerId") Long customerId) {
-        return serviceRepository.findByCustomerId(customerId);
+    public CollectionModel<EntityModel<Service>> getAllServicesByCustomerId(@PathVariable(value = "customerId") Long customerId) {
+        List<EntityModel<Service>> services = serviceRepository.findByCustomerId(customerId).stream().map(serviceModelAssembler::toModel)
+            .collect(Collectors.toList());
+
+        return CollectionModel.of(services, linkTo(methodOn(ServiceController.class).getAllServicesByCustomerId(customerId)).withSelfRel());
     }
 
     /**

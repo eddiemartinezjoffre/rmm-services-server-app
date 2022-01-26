@@ -30,7 +30,7 @@ public class Service {
     @JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id")
     @JsonIdentityReference(alwaysAsId=true)
     @JsonProperty("customer_id")
-    private Customer customer;
+    private Customer customer = new Customer();
 
     public Service(){
 
@@ -40,6 +40,13 @@ public class Service {
         this.serviceName = serviceName;
         this.serviceDescription = serviceDescription;
         this.serviceCost = serviceCost;
+    }
+
+    public Service(String serviceName, String serviceDescription, double serviceCost, long customerId) {
+        this.serviceName = serviceName;
+        this.serviceDescription = serviceDescription;
+        this.serviceCost = serviceCost;
+        this.customer.setId(customerId);
     }
 
     public Long getId() {
