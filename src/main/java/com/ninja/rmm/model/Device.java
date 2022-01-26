@@ -19,9 +19,11 @@ public class Device {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
+    @Column(name = "systemName", unique = true)
     private String systemName;
+    @Column(name = "deviceType")
     private String deviceType;
+    @Column(name = "deviceCost")
     private double deviceCost;
 
     @ManyToOne
