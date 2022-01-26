@@ -21,20 +21,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .roles("admin");
     }
 
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http.httpBasic()
-//                .and()
-//                .authorizeRequests()
-//                .antMatchers(HttpMethod.GET, "/customers/**").hasRole("ADMIN")
-//                .antMatchers(HttpMethod.POST, "/customers").hasRole("ADMIN")
-//                .antMatchers(HttpMethod.PUT, "/customers/**").hasRole("ADMIN")
-//                .antMatchers(HttpMethod.DELETE, "/customers/**").hasRole("ADMIN");
-//    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().httpBasic().and().authorizeRequests().anyRequest().authenticated();
+        http.csrf().disable().httpBasic().and().authorizeRequests().antMatchers("/h2-console/**")
+            .permitAll().anyRequest().authenticated();
+        http.headers().frameOptions().disable();
     }
 
     @Bean
