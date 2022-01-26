@@ -66,22 +66,13 @@ Unit testing also provided
 | :-------- | :------- | :-------------------------------- |
 | `n/a`      | `n/a` | n/a |
 
+
+Request Body:
 ```json
 {
   "name" : "YourName"
 }
 ```
-
-
-#### Edit an existing Customer
-
-```http
-  PUT /customers
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| n/a | n/a | **Returns**. List of Customer |
 
 #### Edit an existing Customer by id
 
