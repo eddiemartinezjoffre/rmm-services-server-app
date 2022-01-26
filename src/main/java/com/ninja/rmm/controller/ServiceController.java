@@ -42,7 +42,7 @@ public class ServiceController {
     }
 
     /**
-     * lis all services assigned to a customer via GET http://localhost:8080/customers/{customerId}/services
+     * list all services assigned to a customer via GET http://localhost:8080/customers/{customerId}/services
      *
      * @param customerId represents the id of the customer
      * @return List of Service domain object with links

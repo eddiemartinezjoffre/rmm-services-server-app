@@ -43,7 +43,7 @@ public class DeviceController {
     }
 
     /**
-     * lis all devices assigned to a customer via GET http://localhost:8080/customers/{customerId}/devices
+     * list all devices assigned to a customer via GET http://localhost:8080/customers/{customerId}/devices
      *
      * @param customerId represents the id of the customer
      * @return Lis of Device objects

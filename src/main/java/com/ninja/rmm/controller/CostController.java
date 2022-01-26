@@ -16,6 +16,12 @@ public class CostController {
     @Autowired
     private CostService costService;
 
+    /**
+     * list monthly cost by a customer via GET http://localhost:8080/customers/{customerId}/cost
+     *
+     * @param customerId represents the id of the customer
+     * @return Total cost for services and devices
+     */
     @GetMapping("/customers/{customerId}/cost")
     @ResponseStatus(value = HttpStatus.OK)
     public ResponseEntity<?> getCustomerCost(@PathVariable("customerId") Long customerId) {
