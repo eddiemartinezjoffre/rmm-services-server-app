@@ -1,19 +1,23 @@
 package com.ninja.rmm.controller;
 
 import com.ninja.rmm.exception.CustomerNotFoundException;
-import com.ninja.rmm.exception.SameNameServiceException;
 import com.ninja.rmm.exception.ServiceNotFoundException;
 import com.ninja.rmm.model.Service;
 import com.ninja.rmm.repository.CustomerRepository;
 import com.ninja.rmm.repository.ServiceRepository;
+import java.util.List;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
-import java.util.List;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ServiceController {
