@@ -56,6 +56,23 @@ Unit testing also provided
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `long` | **Required**. Id of item to fetch |
 
+#### Create new Customer
+
+```http
+  POST /customers
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `n/a`      | `n/a` | n/a |
+
+```json
+{
+  "name" : "YourName"
+}
+```
+
+
 #### Edit an existing Customer
 
 ```http
@@ -75,6 +92,15 @@ Unit testing also provided
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `long` | **Required**. Id of item to fetch |
+
+Request Body:
+
+```json
+{
+  "name" : "YourName"
+}
+```
+
 
 #### Delete an existing customer
 
@@ -109,6 +135,16 @@ Unit testing also provided
 | :-------- | :------- | :------------------------- |
 | `id`      | `long` | **Required**. customerId of item to fetch |
 
+Request Body:
+
+```json
+{
+  "systemName": "SRV-0011",
+  "deviceType": "Windows 2016 Server",
+  "deviceCost" : 4
+}
+```
+
 
 #### Update an existing device by id
 
@@ -120,6 +156,16 @@ Unit testing also provided
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `long` | **Required**. deviceId of item to fetch |
 | `id`      | `long` | **Required**. customerId of item to fetch |
+
+Request Body:
+
+```json
+{
+  "systemName": "SRV-0011",
+  "deviceType": "Windows 2016 Server",
+  "deviceCost" : 4
+}
+```
 
 #### Delete an existing device
 
@@ -154,6 +200,16 @@ Unit testing also provided
 | :-------- | :------- | :------------------------- |
 | `id`      | `long` | **Required**. customerId of item to fetch |
 
+Request Body:
+
+```json
+{
+  "serviceName" : "Antivirus-Windows",
+  "serviceDescription": "To have antivirus in their devices.",
+  "serviceCost": 7
+}
+```
+
 
 #### Update an existing service by id
 
@@ -166,10 +222,20 @@ Unit testing also provided
 | `id`      | `long` | **Required**. serviceId of item to fetch |
 | `id`      | `long` | **Required**. customerId of item to fetch |
 
-#### Delete an existing customer
+Request Body:
+
+```json
+{
+  "serviceName": "Antivirus-Macintosh",
+  "serviceDescription": "To have antivirus in their devices.",
+  "serviceCost": 11
+}
+```
+
+#### Delete an existing service
 
 ```http
-  DELETE /customers/{customerId}/devices/{deviceId}
+  DELETE /customers/{customerId}/services/{serviceId}
 ```
 
 | Parameter | Type     | Description                       |

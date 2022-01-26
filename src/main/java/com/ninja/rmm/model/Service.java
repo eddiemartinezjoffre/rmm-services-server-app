@@ -36,12 +36,6 @@ public class Service {
 
     }
 
-    public Service(String serviceName, String serviceDescription, double serviceCost) {
-        this.serviceName = serviceName;
-        this.serviceDescription = serviceDescription;
-        this.serviceCost = serviceCost;
-    }
-
     public Service(String serviceName, String serviceDescription, double serviceCost, long customerId) {
         this.serviceName = serviceName;
         this.serviceDescription = serviceDescription;
