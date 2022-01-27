@@ -9,6 +9,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ninja.rmm.model.Device;
+import java.math.BigDecimal;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -45,14 +46,14 @@ public class DeviceControllerTest {
 
   @Test
   public void createDevice() throws Exception {
-    Device device = createDevice("WS-0001", "Windows Server", 4);
+    Device device = createDevice("WS-0001", "Windows Server", new BigDecimal(4));
     performPost(URI, device)
         .andExpect(status().isCreated());
   }
 
   @Test
-  public void updateDevice() throws Exception{
-    Device device = createDevice("MAC-001", "Macintosh", 4);
+  public void updateDevice() throws Exception {
+    Device device = createDevice("MAC-001", "Macintosh", new BigDecimal(4));
     performPut(URI + "/1", device)
         .andExpect(status().isOk());
   }
@@ -64,7 +65,7 @@ public class DeviceControllerTest {
   }
 
 
-  private Device createDevice(String name, String type, long cost) {
+  private Device createDevice(String name, String type, BigDecimal cost) {
     Device device = new Device();
     device.setSystemName(name);
     device.setDeviceType(type);

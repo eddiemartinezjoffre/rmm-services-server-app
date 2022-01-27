@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,73 +20,73 @@ import org.hibernate.annotations.OnDeleteAction;
 @Table(name = "devices")
 public class Device {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @Column(name = "systemName", unique = true)
-    private String systemName;
-    @Column(name = "deviceType")
-    private String deviceType;
-    @Column(name = "deviceCost")
-    private double deviceCost;
+  @Column(name = "systemName", unique = true)
+  private String systemName;
+  @Column(name = "deviceType")
+  private String deviceType;
+  @Column(name = "deviceCost")
+  private BigDecimal deviceCost;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id")
-    @JsonIdentityReference(alwaysAsId=true)
-    @JsonProperty("customer_id")
-    private Customer customer = new Customer();
+  @ManyToOne
+  @JoinColumn(name = "customer_id")
+  @OnDelete(action = OnDeleteAction.CASCADE)
+  @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+  @JsonIdentityReference(alwaysAsId = true)
+  @JsonProperty("customer_id")
+  private Customer customer = new Customer();
 
-    public Device(){
+  public Device() {
 
-    }
+  }
 
-    public Device(String systemName, String deviceType, double deviceCost, long customerId) {
-        this.systemName = systemName;
-        this.deviceType = deviceType;
-        this.deviceCost = deviceCost;
-        this.customer.setId(customerId);
-    }
+  public Device(String systemName, String deviceType, BigDecimal deviceCost, long customerId) {
+    this.systemName = systemName;
+    this.deviceType = deviceType;
+    this.deviceCost = deviceCost;
+    this.customer.setId(customerId);
+  }
 
-    public Long getId() {
-        return id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public String getSystemName() {
-        return systemName;
-    }
+  public String getSystemName() {
+    return systemName;
+  }
 
-    public void setSystemName(String systemName) {
-        this.systemName = systemName;
-    }
+  public void setSystemName(String systemName) {
+    this.systemName = systemName;
+  }
 
-    public String getDeviceType() {
-        return deviceType;
-    }
+  public String getDeviceType() {
+    return deviceType;
+  }
 
-    public void setDeviceType(String deviceType) {
-        this.deviceType = deviceType;
-    }
+  public void setDeviceType(String deviceType) {
+    this.deviceType = deviceType;
+  }
 
-    public double getDeviceCost() {
-        return deviceCost;
-    }
+  public BigDecimal getDeviceCost() {
+    return deviceCost;
+  }
 
-    public void setDeviceCost(double deviceCost) {
-        this.deviceCost = deviceCost;
-    }
+  public void setDeviceCost(BigDecimal deviceCost) {
+    this.deviceCost = deviceCost;
+  }
 
-    public Customer getCustomer() {
-        return customer;
-    }
+  public Customer getCustomer() {
+    return customer;
+  }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+  public void setCustomer(Customer customer) {
+    this.customer = customer;
+  }
 }

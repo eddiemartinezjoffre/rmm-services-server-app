@@ -9,6 +9,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ninja.rmm.model.Service;
+import java.math.BigDecimal;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -45,14 +46,14 @@ public class ServiceControllerTest {
 
   @Test
   public void createService() throws Exception {
-    Service service = createService("Antivirus-Mac", "To have antivirus in their devices.", 7);
+    Service service = createService("Antivirus-Mac", "To have antivirus in their devices.", new BigDecimal(7));
     performPost(URI, service)
         .andExpect(status().isCreated());
   }
 
   @Test
   public void updateDevice() throws Exception {
-    Service service = createService("Antivirus-Win", "To have antivirus in their devices.", 5);
+    Service service = createService("Antivirus-Win", "To have antivirus in their devices.", new BigDecimal(5));
     performPut(URI + "/1", service)
         .andExpect(status().isOk());
   }
@@ -63,7 +64,7 @@ public class ServiceControllerTest {
         .andExpect(status().isOk());
   }
 
-  private Service createService(String name, String description, long cost) {
+  private Service createService(String name, String description, BigDecimal cost) {
     Service service = new Service();
     service.setServiceName(name);
     service.setServiceDescription(description);
