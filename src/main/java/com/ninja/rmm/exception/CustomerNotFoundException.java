@@ -1,7 +1,8 @@
 package com.ninja.rmm.exception;
 
-public class CustomerNotFoundException  extends RuntimeException{
-     public CustomerNotFoundException(Long id) {
-        super("Could not find customer " + id);
-    }
+public class CustomerNotFoundException extends RuntimeException {
+
+  public CustomerNotFoundException(Long id) {
+    super("Could not find customer " + id);
+  }
 }

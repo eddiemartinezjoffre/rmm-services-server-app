@@ -10,8 +10,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DeviceModelAssembler implements RepresentationModelAssembler<Device, EntityModel<Device>> {
+
   @Override
-  public EntityModel<Device> toModel(Device device){
+  public EntityModel<Device> toModel(Device device) {
 
     return EntityModel.of(device,
         linkTo(methodOn(DeviceController.class).getAllDevicesByCustomerId(device.getCustomer().getId())).withSelfRel());

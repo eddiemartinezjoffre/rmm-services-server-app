@@ -1,6 +1,6 @@
 # Rmm Services Server App
 
-Backend task for NinjaRMM implementing a REST API with data persistency. This project aims to
+Backend task for NinjaRMM implementing a REST API with data persistence. This project aims 
 to cover the requirements for a Remote Monitoring and Management company that provides services for monitoring and managing
 devices.
 

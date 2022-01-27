@@ -11,14 +11,60 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/controller/CostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/controller/CostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/controller/CustomerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/controller/DeviceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/controller/DeviceController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/controller/ServiceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/controller/ServiceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/data/LoadDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/data/LoadDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/exception/SameNameServiceException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/model/Cost.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/model/Cost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/model/CustomerModelAssembler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/model/CustomerModelAssembler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/model/Device.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/model/Device.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/model/DeviceModelAssembler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/model/DeviceModelAssembler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/model/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/model/Service.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/model/ServiceModelAssembler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/model/ServiceModelAssembler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/repository/ServiceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/repository/ServiceRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/security/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/security/SecurityConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/service/CostServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ninja/rmm/service/CostServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/ninja/rmm/controller/DeviceControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/ninja/rmm/controller/DeviceControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/ninja/rmm/controller/ServiceControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/ninja/rmm/controller/ServiceControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/RmmServicesServerAppApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/RmmServicesServerAppApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/controller/CostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/controller/CostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/controller/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/controller/DeviceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/controller/ServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/controller/ServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/data/LoadDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/data/LoadDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/exception/CustomerNotFoundAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/exception/CustomerNotFoundAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/exception/CustomerNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/exception/CustomerNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/exception/DeviceNotFoundAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/exception/DeviceNotFoundAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/exception/DeviceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/exception/DeviceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/exception/SameNameServiceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/exception/ServiceNotFoundAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/exception/ServiceNotFoundAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/exception/ServiceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/exception/ServiceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Cost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Cost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/CustomerModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/CustomerModelAssembler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Device.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/DeviceModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/DeviceModelAssembler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/ServiceModelAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/model/ServiceModelAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/repository/DeviceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/repository/DeviceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/repository/ServiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/repository/ServiceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/service/CostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/service/CostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/service/CostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ninja/rmm/service/CostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ninja/rmm/RmmServicesServerAppApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ninja/rmm/RmmServicesServerAppApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ninja/rmm/controller/CustomerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ninja/rmm/controller/CustomerControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ninja/rmm/controller/DeviceControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ninja/rmm/controller/DeviceControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ninja/rmm/controller/ServiceControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ninja/rmm/controller/ServiceControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +170,7 @@
       <recent name="com.ninja.rmm.data" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CostControllerTest.getCosts">
+  <component name="RunManager" selected="Spring Boot.RmmServicesServerAppApplication">
     <configuration name="RmmServicesServerAppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ninja.rmm.RmmServicesServerAppApplication" />
       <module name="rmm-services-server-app.main" />
@@ -239,6 +285,7 @@
       <option name="presentableId" value="Default" />
       <updated>1642881217787</updated>
       <workItem from="1643205426578" duration="2388000" />
+      <workItem from="1643248170503" duration="5342000" />
     </task>
     <servers />
   </component>
@@ -267,6 +314,11 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="count" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/rmm_services_server_app$CustomerControllerTest_returnOkStatus_when_gettingCustomerServices.ic" NAME="CustomerControllerTest.returnOkStatus_when_gettingCustomerServices Coverage Results" MODIFIED="1643133271902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
