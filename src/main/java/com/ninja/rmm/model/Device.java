@@ -37,13 +37,14 @@ public class Device {
   @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
   @JsonIdentityReference(alwaysAsId = true)
   @JsonProperty("customer_id")
-  private Customer customer = new Customer();
+  private Customer customer;
 
   public Device() {
 
   }
 
   public Device(String systemName, String deviceType, BigDecimal deviceCost, long customerId) {
+    customer = new Customer();
     this.systemName = systemName;
     this.deviceType = deviceType;
     this.deviceCost = deviceCost;

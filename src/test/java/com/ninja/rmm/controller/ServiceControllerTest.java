@@ -8,6 +8,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ninja.rmm.model.Customer;
 import com.ninja.rmm.model.Service;
 import java.math.BigDecimal;
 import org.junit.Before;
@@ -52,14 +53,14 @@ public class ServiceControllerTest {
   }
 
   @Test
-  public void updateDevice() throws Exception {
+  public void updateService() throws Exception {
     Service service = createService("Antivirus-Win", "To have antivirus in their devices.", new BigDecimal(5));
     performPut(URI + "/1", service)
         .andExpect(status().isOk());
   }
 
   @Test
-  public void deleteDevice() throws Exception {
+  public void deleteService() throws Exception {
     mockMvc.perform(delete(URI + "/1"))
         .andExpect(status().isOk());
   }
